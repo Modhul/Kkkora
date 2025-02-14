@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffcccc; /* Светло-красный фон */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff4d4d' fill-opacity='0.2' d='M50,0 C77.6,0 100,22.4 100,50 C100,77.6 77.6,100 50,100 C22.4,100 0,77.6 0,50 C0,22.4 22.4,0 50,0 Z M50,20 C37.3,20 27,30.3 27,43 C27,55.7 37.3,66 50,66 C62.7,66 73,55.7 73,43 C73,30.3 62.7,20 50,20 Z'/%3E%3C/svg%3E"); /* Узор из сердечек */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон для контейнера */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 3em;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1a1a;
+}
+
+.next-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Анимация сердечек */
+@keyframes fall {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.heart {
+    position: absolute;
+    top: -10%;
+    font-size: 20px;
+    color: #ff4d4d;
+    animation: fall 5s linear infinite, spin 4s linear infinite;
+}
